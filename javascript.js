@@ -51,7 +51,24 @@ function createCanvas() {
                     newerDiv.className = '';
                     newerDiv.classList.add("pixel");
                 }
-            }); 
+            });
+            newerDiv.addEventListener("click", () => {
+                if (newerDiv.classList.contains("shade1")) {
+                        newerDiv.classList.remove("shade1");
+                        newerDiv.classList.add("shade2");
+                }
+                else if (newerDiv.classList.contains("shade2")) {
+                    newerDiv.classList.remove("shade2");
+                    newerDiv.classList.add("shade3");
+                }
+                else if (newerDiv.classList.contains("shade3")) {
+                    newerDiv.classList.remove("shade3");
+                    newerDiv.classList.add("shade4");
+                }
+                else {
+                    newerDiv.classList.add("shade1");
+                }
+            });
             newDiv.appendChild(newerDiv);
         }
         canvas.appendChild(newDiv);
